@@ -155,6 +155,7 @@ class clubProfile extends StatelessWidget {
         height: 60,
         width: 350,
         child: TextField(
+          style: TextStyle(color: Colors.white),
           controller: textEditingController,
           onChanged: (value) {
             value = value;

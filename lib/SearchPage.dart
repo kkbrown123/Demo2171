@@ -72,6 +72,7 @@ class _ClubListState extends State<ClubList> {
             subtitle: Text(
                 '${filteredList[index]["ClubPres"]} contact @${filteredList[index]["email"]}'),
             onTap: () {
+              print(RegisterLst);
               showDialog(
                 context: context,
                 builder: (BuildContext context) {
@@ -82,6 +83,7 @@ class _ClubListState extends State<ClubList> {
                     actions: <Widget>[
                       ElevatedButton(
                         onPressed: () {
+                          
                           if (RegisterLst.contains(filteredList[index])) {
                             Navigator.of(context).pop();
                             showDialog(
@@ -105,6 +107,25 @@ class _ClubListState extends State<ClubList> {
                           } else {
                             Navigator.of(context).pop();
                             RegisterClub(filteredList[index]);
+
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: const Text('Registration Successful'),
+                                  content: Text(
+                                      "You are now a member of ${filteredList[index]["ClubPres"]}'s ${filteredList[index]["ClubName"]} club "),
+                                  actions: <Widget>[
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Close'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           }
                         },
                         child: Text('Yes'),
