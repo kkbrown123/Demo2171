@@ -6,15 +6,7 @@ import 'package:flutter/material.dart';
 
 class InformationPage {
   List<dynamic> lst = [
-    {
-      "ClubName": "Hockey",
-      "SocialMedia": "https://www.linkedin.com/in/mickoy-banton-29259a186?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BG6GDYlu9Si%2BAulSrqoXBmw%3D%3D",
-      "meetDay": "Monday",
-      "meetTime": "2:30PM",
-      "email": "mickoybanton11@gmail.com",
-      "phone": "+1 (876) 869-1787",
-      "ClubPres": "Mickoy Banton"
-    },
+
     {
       "ClubName": "Basketball",
       "SocialMedia": "https://www.example.com/basketball",
