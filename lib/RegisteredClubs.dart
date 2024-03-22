@@ -2,20 +2,18 @@ import 'package:demo2171/clubProfile.dart';
 import 'package:demo2171/information.dart';
 import 'package:flutter/material.dart';
 
-
-
-class ClubForum extends StatelessWidget  {
-    List<dynamic> profileLst;
-  ClubForum({super.key,required this.profileLst});
+class RegisteredClubs extends StatelessWidget {
+  List<dynamic> profileLst;
+  RegisteredClubs({super.key, required this.profileLst});
   @override
   Widget build(BuildContext context) {
     InformationPage info = InformationPage();
-    List<dynamic> lst =  profileLst;
+    List<dynamic> lst = profileLst;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-             Navigator.of(context).pop();
+            Navigator.of(context).pop();
           },
           icon: const Icon(Icons.arrow_back_ios_new),
           color: Colors.white,
@@ -43,7 +41,7 @@ class ClubForum extends StatelessWidget  {
       ),
       body: Center(
         child: ListView(
-          children: clubList(lst,context),
+          children: ClubSearch(lst, context),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -62,11 +60,17 @@ class ClubForum extends StatelessWidget  {
     );
   }
 
-  List<Widget> clubList(List<dynamic> lst,BuildContext context) {
+  List<Widget> ClubSearch(List<dynamic> lst, BuildContext context) {
     List<Widget> clubLst = [];
     for (int i = 0; i < lst.length; i++) {
-      clubLst.add(clubCard(lst[i]["ClubName"], lst[i]["ClubPres"],
-          lst[i]["meetDay"], lst[i]["meetTime"], lst[i]["email"], lst[i],context));
+      clubLst.add(clubCard(
+          lst[i]["ClubName"],
+          lst[i]["ClubPres"],
+          lst[i]["meetDay"],
+          lst[i]["meetTime"],
+          lst[i]["email"],
+          lst[i],
+          context));
     }
     return clubLst;
   }

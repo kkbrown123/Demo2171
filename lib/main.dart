@@ -1,4 +1,4 @@
-import 'package:demo2171/ClubForum.dart';
+import 'package:demo2171/RegisteredClubs.dart';
 import 'package:demo2171/menu.dart';
 import 'package:flutter/material.dart';
 
@@ -39,34 +39,33 @@ class _LoginPageState extends State<LoginPage> {
           MaterialPageRoute(builder: (context) => MenuPage(profileLst: lst)));
     } else {
       print('Login failed');
-         showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: const Text('Login Error'),
-                  content: const Text(
-                      'The information seems to be incorrect please try again'),
-                  actions: <Widget>[
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Close'),
-                    ),
-                  ],
-                );
-              },
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Login Error'),
+            content: const Text(
+                'The information seems to be incorrect please try again'),
+            actions: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Close'),
+              ),
+            ],
           );
+        },
+      );
       _usernameController.text = '';
       _passwordController.text = '';
     }
   }
-    bool obscurePassword = true;
+
+  bool obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
-  
-
     return Scaffold(
       appBar: AppBar(title: const Text('Login')),
       body: Padding(
@@ -101,8 +100,8 @@ class _LoginPageState extends State<LoginPage> {
                         setState(() {
                           if (obscurePassword) {
                             obscurePassword = !obscurePassword;
-                          }else{
-                             obscurePassword = true;
+                          } else {
+                            obscurePassword = true;
                           }
                           print(obscurePassword);
                         });

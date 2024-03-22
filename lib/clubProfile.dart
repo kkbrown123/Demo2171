@@ -1,4 +1,4 @@
-import 'package:demo2171/ClubForum.dart';
+import 'package:demo2171/RegisteredClubs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,7 @@ class clubProfile extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-          Navigator.of(context).pop();
+            Navigator.of(context).pop();
           },
           icon: const Icon(Icons.arrow_back_ios_new),
           color: Colors.white,

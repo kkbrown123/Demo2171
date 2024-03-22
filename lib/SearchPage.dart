@@ -2,17 +2,17 @@ import 'package:demo2171/information.dart';
 import 'package:demo2171/menu.dart';
 import 'package:flutter/material.dart';
 
-class ClubList extends StatefulWidget {
+class ClubSearch extends StatefulWidget {
   List<dynamic> profileList;
-  ClubList({super.key, required this.profileList});
+  ClubSearch({super.key, required this.profileList});
 
   @override
-  _ClubListState createState() => _ClubListState(profileList: profileList);
+  _ClubSearchState createState() => _ClubSearchState(profileList: profileList);
 }
 
-class _ClubListState extends State<ClubList> {
+class _ClubSearchState extends State<ClubSearch> {
   List<dynamic> profileList;
-  _ClubListState({required this.profileList});
+  _ClubSearchState({required this.profileList});
   final TextEditingController _searchController = TextEditingController();
   InformationPage info = InformationPage();
   List<dynamic> lst = [];
@@ -83,7 +83,6 @@ class _ClubListState extends State<ClubList> {
                     actions: <Widget>[
                       ElevatedButton(
                         onPressed: () {
-                          
                           if (RegisterLst.contains(filteredList[index])) {
                             Navigator.of(context).pop();
                             showDialog(
